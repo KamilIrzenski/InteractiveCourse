@@ -1,0 +1,79 @@
+﻿@model IEnumerable<InteractiveCourse.Models.SlideViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_LayoutSecond.cshtml";
+}
+
+<main>
+    <!--? slider Area Start-->
+    <section class="slider-area slider-area2">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-11 col-md-12">
+                            <div class="hero__caption hero__caption2">
+                                <h1 data-animation="bounceIn" data-delay="0.2s">PHP course</h1>
+                                <!-- breadcrumb Start-->
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Services</a></li>
+                                    </ol>
+                                </nav>
+                                <!-- breadcrumb End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Start_banner">
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-lg-3">
+                    <div>
+                        @{
+                            int numberPage = ViewBag.numberPage;
+                            int pageCurrent = ViewBag.pageCurrent;
+                            int i;
+                            for (i = 1; i <= numberPage; i++)
+                            {
+                                <div class="list-group">
+                                </div>
+                                if (i == pageCurrent)
+                                {
+                                    <a href="?page=@i" class="list-group-item list-group-item-action active">
+                                        @i Lekcja
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="?page=@i" class="list-group-item list-group-item-action">
+                                        @i Lekcja
+                                    </a>
+                                }
+
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div>
+                        @foreach (var cont in Model)
+                        {
+                            <div>
+                                @cont.CourseContent
+                            </div>
+                        }
+                        </>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
