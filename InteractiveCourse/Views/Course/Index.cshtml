@@ -1,9 +1,7 @@
 ﻿@* @model dynamic *@
 @model IEnumerable<InteractiveCourse.Models.CourseViewModel>
-@{
-    ViewBag.Title = "title";
-    Layout = "~/Views/Shared/_LayoutSecond.cshtml";
-}
+@{ ViewBag.Title = "title";
+                Layout = "~/Views/Shared/_LayoutSecond.cshtml"; }
 
 
 <main>
@@ -42,16 +40,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+             @foreach(var ciurses in Model)
+             {       
+                 <div class="row">
                 <div class="col-lg-4">
                     <div class="properties properties2 mb-30">
                         <div class="properties__card">
                             <div class="properties__img overlay1">
-                                <a asp-area="" asp-controller="Course" asp-action="Php"><img src="~/theme/assets/img/gallery/featured1.png" alt=""></a>
+                                <a asp-area="" asp-controller="Course" asp-action="" id_course="@ciurses.Id"><img src="~/theme/assets/img/gallery/featured1.png" alt=""></a>
                             </div>
                             <div class="properties__caption">
                                 <p>User Experience</p>
-                                <h3><a asp-area="" asp-controller="Course" asp-action="Php">Kurs Podstawy PHP</a></h3>
+                                <h3><a asp-area="" asp-controller="Course" asp-action="Php" asp-route-coursesId="@ciurses.Id">@ciurses.Name</a></h3>
                                 <p>
                                     Podstawy php...........
                                 </p>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                @*<div class="col-lg-4">
                     <div class="properties properties2 mb-30">
                         <div class="properties__card">
                             <div class="properties__img overlay1">
@@ -242,8 +242,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>*@
+            </div> }
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
                     <div class="section-tittle text-center mt-40">
@@ -363,53 +363,53 @@
                 </div>
             </div>
             @*<div class="row justify-content-center">
-                <div class="col-xl-12">
-                    <div class="section-tittle text-center mt-20">
-                        <a href="courses.html" class="border-btn">View More Subjects</a>
+                    <div class="col-xl-12">
+                        <div class="section-tittle text-center mt-20">
+                            <a href="courses.html" class="border-btn">View More Subjects</a>
+                        </div>
                     </div>
-                </div>
-            </div>*@
+                </div>*@
         </div>
     </div>
     <!-- top subjects End -->
     <!-- ? services-area -->
     @*<div class="services-area services-area2 section-padding40">
-        <div class="container">
-            <div class="row justify-content-sm-center">
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services mb-30">
-                        <div class="features-icon">
-                            <img src="assets/img/icon/icon1.svg" alt="">
-                        </div>
-                        <div class="features-caption">
-                            <h3>60+ UX courses</h3>
-                            <p>The automated process all your website tasks.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services mb-30">
-                        <div class="features-icon">
-                            <img src="assets/img/icon/icon2.svg" alt="">
-                        </div>
-                        <div class="features-caption">
-                            <h3>Expert instructors</h3>
-                            <p>The automated process all your website tasks.</p>
+            <div class="container">
+                <div class="row justify-content-sm-center">
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-30">
+                            <div class="features-icon">
+                                <img src="assets/img/icon/icon1.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>60+ UX courses</h3>
+                                <p>The automated process all your website tasks.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services mb-30">
-                        <div class="features-icon">
-                            <img src="assets/img/icon/icon3.svg" alt="">
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-30">
+                            <div class="features-icon">
+                                <img src="assets/img/icon/icon2.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Expert instructors</h3>
+                                <p>The automated process all your website tasks.</p>
+                            </div>
                         </div>
-                        <div class="features-caption">
-                            <h3>Life time access</h3>
-                            <p>The automated process all your website tasks.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-30">
+                            <div class="features-icon">
+                                <img src="assets/img/icon/icon3.svg" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Life time access</h3>
+                                <p>The automated process all your website tasks.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 </main>

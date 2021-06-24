@@ -39,6 +39,7 @@
                         @{
                             int numberPage = ViewBag.numberPage;
                             int pageCurrent = ViewBag.pageCurrent;
+                            int courseId = ViewBag.courseId;
                             int i;
                             for (i = 1; i <= numberPage; i++)
                             {
@@ -46,13 +47,13 @@
                                 </div>
                                 if (i == pageCurrent)
                                 {
-                                    <a href="?page=@i" class="list-group-item list-group-item-action active">
+                                    <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action active">
                                         @i Lekcja
                                     </a>
                                 }
                                 else
                                 {
-                                    <a href="?page=@i" class="list-group-item list-group-item-action">
+                                    <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action">
                                         @i Lekcja
                                     </a>
                                 }

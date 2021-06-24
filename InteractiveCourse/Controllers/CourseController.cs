@@ -34,9 +34,9 @@ namespace InteractiveCourse.Controllers
         {
             return View();
         }
-        public  ActionResult Php(int ? page)
+        public  ActionResult Php(int coursesId, int ? page)
         {
-            var phpCourse = _dbContext.Slides.Where(x => x.CourseId == 2).ToList();
+            var phpCourse = _dbContext.Slides.Where(x => x.CourseId == coursesId).ToList();
             var phpViewModel = _mapper.Map<List<SlideViewModel>>(phpCourse);
 
             if (page > 0)
@@ -57,6 +57,7 @@ namespace InteractiveCourse.Controllers
             ViewBag.pageCurrent = page;
             float numberPage = (float)(totalContent / limit);
             ViewBag.numberPage = (int)Math.Ceiling(numberPage);
+            ViewBag.courseId = coursesId;
             var dataContent = phpViewModel.OrderBy(s => s.Nr).Skip(start).Take(limit);
 
 
