@@ -1,5 +1,4 @@
-﻿@* @model dynamic *@
-@using Microsoft.EntityFrameworkCore.Metadata.Internal
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @model IEnumerable<InteractiveCourse.Models.CourseViewModel>
 @{ ViewBag.Title = "title";
     Layout = "~/Views/Shared/_LayoutSecond.cshtml"; }
@@ -48,7 +47,7 @@
         <div class="properties properties2 mb-30">
             <div class="properties__card">
                 <div class="properties__img overlay1">
-                    <a asp-area="" asp-controller="Course" asp-action="Php" asp-route-coursesId="@courses.Id"><img src="~/theme/assets/img/gallery/featured1.png" alt=""></a>
+                    <a asp-area="" asp-controller="Course" asp-action="Php" asp-route-coursesId="@courses.Id"><img src="~/theme/assets/img/gallery/@courses.PictureName" alt=""></a>
                 </div>
                 <div class="properties__caption">
                     <p>User Experience</p>

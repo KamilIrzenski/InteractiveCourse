@@ -9,6 +9,8 @@ namespace InteractiveCourse.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public string PictureName { get; set; }
         //public int Nr { get; set; }
         //public string CourseContent { get; set; }
     }

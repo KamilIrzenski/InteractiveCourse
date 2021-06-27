@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using AutoMapper;
 using InteractiveCourse.Entities;
@@ -58,9 +59,9 @@ namespace InteractiveCourse.Controllers
             float numberPage = (float)(totalContent / limit);
             ViewBag.numberPage = (int)Math.Ceiling(numberPage);
             ViewBag.courseId = coursesId;
+
             var dataContent = phpViewModel.OrderBy(s => s.Nr).Skip(start).Take(limit);
-
-
+            
             return View(dataContent);
         }
         public async Task<ViewResult> MySql()

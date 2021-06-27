@@ -16,7 +16,8 @@ namespace InteractiveCourse
                 //.ForMember(m => m.Nr, c => c.MapFrom(s => s.Slide.Nr))
                 //.ForMember(m => m.CourseContent, c =>c.MapFrom(s =>s.Slide.CourseContent));
 
-            CreateMap<Slide, SlideViewModel>();
+            CreateMap<Slide, SlideViewModel>()
+                .ForMember(m =>m.CourseName, c =>c.MapFrom(f =>f.Course.Name));
         }
     }
 }
