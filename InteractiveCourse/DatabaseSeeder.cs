@@ -42,18 +42,22 @@ namespace InteractiveCourse
                 new Course()
                 {
                     Name = "MySQL",
+                    PictureName = "featured4"
                 },
                 new Course()
                 {
                     Name = "PHP",
+                    PictureName = "featured3"
                 },
                 new Course()
                 {
                     Name = "HTML",
+                    PictureName = "featured5"
                 },
                 new Course()
                 {
                     Name = "PROJECT",
+                    PictureName = "featured6"
                 },
             };
             return courses;
@@ -66,31 +70,31 @@ namespace InteractiveCourse
                 new Slide()
                 {
                     CourseId = 1,
-                    Nr = 2,
+                    Nr = 1,
                     CourseContent =
-                        "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id. "
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id. "
 
                 },
                 new Slide()
                 {
                     CourseId = 2,
-                    Nr = 2,
+                    Nr = 1,
                     CourseContent =
-                        "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id."
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id."
                 },
                 new Slide()
                 {
                     CourseId = 3,
-                    Nr = 2,
+                    Nr = 1,
                     CourseContent =
-                        "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id."
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id."
                 },
                 new Slide()
                 {
                     CourseId = 4,
-                    Nr = 2,
+                    Nr = 1,
                     CourseContent =
-                        "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id."
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu. Natoque penatibus et magnis dis. Tempor orci dapibus ultrices in iaculis. Tristique senectus et netus et. Orci a scelerisque purus semper eget duis at. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Enim praesent elementum facilisis leo vel. Feugiat nisl pretium fusce id velit ut tortor. Fermentum posuere urna nec tincidunt praesent. Cursus in hac habitasse platea dictumst. Neque convallis a cras semper auctor neque vitae tempus quam. Potenti nullam ac tortor vitae purus faucibus ornare. Montes nascetur ridiculus mus mauris vitae ultricies leo. Vulputate ut pharetra sit amet aliquam id."
                 },
             };
             return slides;
