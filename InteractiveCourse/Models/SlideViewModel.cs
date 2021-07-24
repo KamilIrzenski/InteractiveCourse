@@ -10,5 +10,6 @@ namespace InteractiveCourse.Models
         public int Nr { get; set; }
         public string CourseContent { get; set; }
         public string CourseName { get; set; }
+        public string SlideName { get; set; }   
     }
 }

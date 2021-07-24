@@ -10,6 +10,7 @@ namespace InteractiveCourse.Entities
         public int Nr { get; set; }
         public string CourseContent { get; set; }
         public int CourseId { get; set; }
+        public string SlideName { get; set; }   
         public virtual Course Course{ get; set; }  
     }
 }

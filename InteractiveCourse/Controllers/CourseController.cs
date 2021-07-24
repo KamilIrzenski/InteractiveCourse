@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using AutoMapper;
 using InteractiveCourse.Entities;
+using InteractiveCourse.Migrations;
 using InteractiveCourse.Models;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Mvc;
@@ -35,11 +36,10 @@ namespace InteractiveCourse.Controllers
         {
             return View();
         }
-        public  ActionResult Php(int coursesId, int ? page)
+        public  ActionResult Courses(int coursesId, int ? page)
         {
             var phpCourse = _dbContext.Slides.Where(x => x.CourseId == coursesId).ToList();
             var phpViewModel = _mapper.Map<List<SlideViewModel>>(phpCourse);
-
             if (page > 0)
             {
                 page = page;
@@ -59,41 +59,12 @@ namespace InteractiveCourse.Controllers
             float numberPage = (float)(totalContent / limit);
             ViewBag.numberPage = (int)Math.Ceiling(numberPage);
             ViewBag.courseId = coursesId;
+           
 
             var dataContent = phpViewModel.OrderBy(s => s.Nr).Skip(start).Take(limit);
             
             return View(dataContent);
         }
-        public async Task<ViewResult> MySql()
-        {
-            var mySqlCourse = _dbContext.Slides.Where(x => x.CourseId == 1).ToListAsync();
-            return View(await mySqlCourse);
-        }
-        public async Task<ViewResult> Project()
-        {
-            var projectCourse = _dbContext.Slides.Where(x => x.CourseId == 4).ToListAsync();
-            return View(await projectCourse);
-        }
-        public async Task<ViewResult> Html()
-        {
-            var htmlCourse = _dbContext.Slides.Where(x => x.CourseId == 3).ToListAsync();
-            return View(await htmlCourse);
-        }
-
-        //[HttpGet("{nr}")]
-        //public ActionResult<SlideViewModel> GetSlide([FromRoute] int nr)
-        //{
-        //    var slide = _dbContext.Slides.FirstOrDefault(x => x.Nr == nr);
-
-        //    if (slide is null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return Ok(slide);
-        //}
-
-       
-
+        
     }
 }

@@ -1,9 +1,10 @@
-﻿@model IEnumerable<InteractiveCourse.Models.SlideViewModel>
-
+﻿@using Microsoft.EntityFrameworkCore.Query
+@model IEnumerable<InteractiveCourse.Models.SlideViewModel>
 @{
     ViewBag.Title = "title";
     Layout = "~/Views/Shared/_LayoutSecond.cshtml";
 }
+
 
 <main>
     <!--? slider Area Start-->
@@ -40,34 +41,36 @@
                             int numberPage = ViewBag.numberPage;
                             int pageCurrent = ViewBag.pageCurrent;
                             int courseId = ViewBag.courseId;
-                            int i;
-                            for (i = 1; i <= numberPage; i++)
+                            int i ;
+                            foreach (var slide in Model)
+
+                            //for (i = 1; i <= numberPage; i++)
                             {
                                 <div class="list-group">
                                 </div>
-                                if (i == pageCurrent)
-                                {
-                                    <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action active">
-                                        @i Lekcja
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action">
-                                        @i Lekcja
-                                    </a>
-                                }
+                                if (Convert.ToInt32(slide) == pageCurrent)
+                                     {
+                                         <a href="?page=@slide&coursesId=@courseId" class="list-group-item list-group-item-action active">
+                                             @slide.SlideName
+                                         </a>
+                                     }
+                                     else
+                                     {
+                                         <a href="?page=@slide&coursesId=@courseId" class="list-group-item list-group-item-action">
+                                             @slide.SlideName
+                                         </a>
+                                     }
 
-                            }
-                        }
+                                 }
+                             }
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <div>
+                    <div class="content">
                         @foreach (var cont in Model)
                         {
                             <div>
-                                @cont.CourseContent
+                                @Html.Raw(cont.CourseContent)
                             </div>
                         }
                         </>
