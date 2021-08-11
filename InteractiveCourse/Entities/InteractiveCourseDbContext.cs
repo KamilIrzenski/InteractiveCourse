@@ -13,6 +13,8 @@ namespace InteractiveCourse.Entities
 
         public DbSet<Course> Courses { get; set; }
         public DbSet<Slide> Slides { get; set; }
+        //public DbSet<User> Users { get; set; }
+        //public DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

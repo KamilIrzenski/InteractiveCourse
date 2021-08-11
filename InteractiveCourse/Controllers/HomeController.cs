@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using InteractiveCourse.Entities;
+using Microsoft.EntityFrameworkCore;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 namespace InteractiveCourse.Controllers
 {
@@ -31,15 +34,41 @@ namespace InteractiveCourse.Controllers
             return View(courseViewModel);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SendMail(string name, string subject, string email, string message)
+        {
+            var msg = new MimeMessage();
+            msg.From.Add(new MailboxAddress("kamildevkontakt@gmail.com"));
+            msg.To.Add(new MailboxAddress("kirzenski@gmail.com"));
+            msg.Subject = subject;
+            msg.Body = new TextPart("html")
+            {
+                Text = "From: " + name + "<br>" +
+                       "Contact Information: " + email + "<br>" +
+                       "Message: " + message
+            };
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587);
+                client.Authenticate("kamildevkontakt@gmail.com", "poczta@Haslo1");
+                client.Send(msg);
+                client.Disconnect(false);
+
+            }
+
+            return View("Contact");
+
+        }
+
     }
 }

@@ -1,5 +1,7 @@
 ﻿@using Microsoft.EntityFrameworkCore.Query
+@using Microsoft.EntityFrameworkCore.Infrastructure
 @model IEnumerable<InteractiveCourse.Models.SlideViewModel>
+
 @{
     ViewBag.Title = "title";
     Layout = "~/Views/Shared/_LayoutSecond.cshtml";
@@ -16,12 +18,14 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-11 col-md-12">
                             <div class="hero__caption hero__caption2">
-                                <h1 data-animation="bounceIn" data-delay="0.2s">Nazwa Kursu</h1>
+                                @foreach (var nameCourse in Model)
+                                {
+                                    <h1 data-animation="bounceIn" data-delay="0.2s">Kurs @nameCourse.CourseName</h1>}
                                 <!-- breadcrumb Start-->
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Services</a></li>
+                                        <li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Kursy</a></li>
                                     </ol>
                                 </nav>
                                 <!-- breadcrumb End -->
@@ -41,28 +45,54 @@
                             int numberPage = ViewBag.numberPage;
                             int pageCurrent = ViewBag.pageCurrent;
                             int courseId = ViewBag.courseId;
-                            int i ;
-                            foreach (var slide in Model)
+                            var slideName = ViewBag.slideName;
+                            IList<string> lessonList = (IList<string>)ViewBag.LessonList;
+                            int i;
 
-                            //for (i = 1; i <= numberPage; i++)
+
+                            for (i = 1; i <= lessonList.Count; i++)
                             {
-                                <div class="list-group">
-                                </div>
-                                if (Convert.ToInt32(slide) == pageCurrent)
-                                     {
-                                         <a href="?page=@slide&coursesId=@courseId" class="list-group-item list-group-item-action active">
-                                             @slide.SlideName
-                                         </a>
-                                     }
-                                     else
-                                     {
-                                         <a href="?page=@slide&coursesId=@courseId" class="list-group-item list-group-item-action">
-                                             @slide.SlideName
-                                         </a>
-                                     }
+                                if (i == pageCurrent)
 
-                                 }
-                             }
+                                {
+                                    <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action active">
+                                        @lessonList[i-1]
+                                    </a>
+                                }
+                                else
+                                {
+
+
+                                    <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action">
+                                        @lessonList[i-1]
+                                    </a>
+                                }
+                            }
+
+                            @*for (i = 1; i <= numberPage; i++)
+                                {
+                                    foreach (var slide in Model)
+                                    {
+                                        <div class="list-group">
+                                        </div>
+                                        if (i == pageCurrent)
+                                        {
+                                            <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action active">
+                                                @slide.SlideName
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action">
+                                                @Model.FirstOrDefault().SlideName
+                                            </a>
+                                        }
+                                    }
+
+                                }*@
+
+                        }
+
                     </div>
                 </div>
                 <div class="col-lg-9">

@@ -59,21 +59,21 @@
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                                                <li><a asp-area="" asp-controller="Course" asp-action="Index">Courses</a></li>
-                                                <li><a asp-area="" asp-controller="Course" asp-action="About">About</a></li>
-                                                <li>
+                                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a></li>
+                                                <li><a asp-area="" asp-controller="Course" asp-action="Index">Kursy</a></li>
+                                                <li><a asp-area="" asp-controller="Course" asp-action="About">O mnie</a></li>
+                                                @*<li>
                                                     <a href="#">Blog</a>
                                                     <ul class="submenu">
                                                         <li><a href="blog.html">Blog</a></li>
                                                         <li><a href="blog_details.html">Blog Details</a></li>
                                                         <li><a href="elements.html">Element</a></li>
                                                     </ul>
-                                                </li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                </li>*@
+                                                <li><a asp-area=""asp-controller="Home" asp-action="Contact">Kontakt</a></li>
                                                 <!-- Button -->
-                                                <li class="button-header margin-left "><a href="#" class="btn">Join</a></li>
-                                                <li class="button-header"><a href="login.html" class="btn btn3">Log in</a></li>
+                                                @*<li class="button-header margin-left "><a href="#" class="btn">Zarejestruj</a></li>
+                                                <li class="button-header"><a href="login.html" class="btn btn3">Zaloguj</a></li>*@
                                             </ul>
                                         </nav>
                                     </div>
@@ -107,19 +107,19 @@
                                     </div>
                                     <div class="footer-tittle">
                                         <div class="footer-pera">
-                                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                                            <p>Rozwijaj swoje umiejętności dzięki kursom, oferowanym przez nasza platforme edukacyjna.</p>
                                         </div>
                                     </div>
                                     <!-- social -->
                                     <div class="footer-social">
                                         <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+                        @*<div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
                                     <h4>Our solutions</h4>
@@ -160,7 +160,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>
