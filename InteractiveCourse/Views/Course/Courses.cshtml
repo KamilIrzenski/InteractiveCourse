@@ -25,7 +25,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Kursy</a></li>
+                                        <li class="breadcrumb-item"><a asp-area="" asp-controller="Course" asp-action="Index">Kursy</a></li>
                                     </ol>
                                 </nav>
                                 <!-- breadcrumb End -->
@@ -68,29 +68,6 @@
                                     </a>
                                 }
                             }
-
-                            @*for (i = 1; i <= numberPage; i++)
-                                {
-                                    foreach (var slide in Model)
-                                    {
-                                        <div class="list-group">
-                                        </div>
-                                        if (i == pageCurrent)
-                                        {
-                                            <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action active">
-                                                @slide.SlideName
-                                            </a>
-                                        }
-                                        else
-                                        {
-                                            <a href="?page=@i&coursesId=@courseId" class="list-group-item list-group-item-action">
-                                                @Model.FirstOrDefault().SlideName
-                                            </a>
-                                        }
-                                    }
-
-                                }*@
-
                         }
 
                     </div>
